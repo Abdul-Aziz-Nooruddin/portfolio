@@ -156,14 +156,9 @@ const form = document.getElementById('contactForm');
 const successMsg = document.getElementById('formSuccess');
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault();
   const btn = form.querySelector('button[type=submit]');
   btn.textContent = 'Sending...';
   btn.style.opacity = '0.7';
-  setTimeout(() => {
-    btn.style.display = 'none';
-    successMsg.classList.add('show');
-  }, 1200);
 });
 
 /* ==========================================
