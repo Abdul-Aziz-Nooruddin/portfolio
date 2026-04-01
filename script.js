@@ -155,10 +155,33 @@ skillFills.forEach(f => barObserver.observe(f));
 const form = document.getElementById('contactForm');
 const successMsg = document.getElementById('formSuccess');
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
   const btn = form.querySelector('button[type=submit]');
   btn.textContent = 'Sending...';
   btn.style.opacity = '0.7';
+
+  const data = new FormData(form);
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      btn.style.display = 'none';
+      successMsg.classList.add('show');
+      form.reset();
+    } else {
+      btn.textContent = 'Failed. Try again.';
+      btn.style.opacity = '1';
+    }
+  } catch (err) {
+    btn.textContent = 'Error. Try again.';
+    btn.style.opacity = '1';
+  }
 });
 
 /* ==========================================
