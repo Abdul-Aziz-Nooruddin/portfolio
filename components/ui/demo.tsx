@@ -1,8 +1,8 @@
 'use client'
 
-import { Card } from '@/components/ui/card'
-import { SplineScene } from '@/components/ui/splite'
-import { Spotlight } from '@/components/ui/spotlight'
+import { Card } from './card'
+import { SplineScene } from './splite'
+import { Spotlight } from './spotlight'
 
 interface SplineSceneBasicProps {
   title: string

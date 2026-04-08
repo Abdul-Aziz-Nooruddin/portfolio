@@ -1,4 +1,4 @@
-import { SplineSceneBasic } from '@/components/ui/demo'
+import { SplineSceneBasic } from '../components/ui/demo'
 
 export default function Home() {
   return (
