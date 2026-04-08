@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm --prefix portfolio-next run build",
+    "dev": "npm --prefix portfolio-next run dev",
+    "start": "npm --prefix portfolio-next run start"
+  },
+  "dependencies": {
+    "next": "16.2.2",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  }
+}
